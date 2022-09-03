@@ -51,7 +51,7 @@ function App() {
     const tgl = new Date();
     setData([
       {
-        id: data.length + 1,
+        id: Date.now(),
         masukkan: masukkan,
         date: `${tgl.getDate()} ${
           bulan[tgl.getMonth()]
