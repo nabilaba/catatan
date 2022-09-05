@@ -42,7 +42,7 @@ const getInitialData = () => [
     archived: false,
   },
   {
-    id: 6,
+    id: 24072001,
     title: "Catatan Dev",
     body: "Aplikasi Catatan dibuat pada tanggal 3 September 2022 dan di modif pada tanggal 5 September 2022\n\n\n- Nabil Aziz Bima Anggita",
     createdAt: "2022-09-05T04:27:34.572Z",
