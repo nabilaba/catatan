@@ -13,17 +13,14 @@ import { showFormattedDate } from "../../utils";
 
 const ListCatatan = ({ data, archived, filter, setData }) => {
   const deleteData = (id) => {
-    setData(data.filter((item) => item.id != id));
+    setData((prev) => prev.filter((item) => item.id !== id));
   };
 
   const archiveData = (id) => {
-    setData(
-      data.map((item) => {
-        if (item.id == id) {
-          item.archived = !item.archived;
-        }
-        return item;
-      })
+    setData((prev) =>
+      prev.map((item) =>
+        item.id === id ? { ...item, archived: !item.archived } : item
+      )
     );
   };
 
