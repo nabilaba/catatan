@@ -54,6 +54,7 @@ const ListCatatan = ({ data, archived, filter, setData }) => {
         );
         swal("Poof! Your data has been archived!", {
           icon: "success",
+          className: "swaldark",
         });
       } else {
         swal("Your data is safe!", {
