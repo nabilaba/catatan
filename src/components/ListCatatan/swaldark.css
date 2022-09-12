@@ -1,0 +1,21 @@
+.swaldark {
+  background-color: #1A202C;
+  color: #fff;
+}
+
+.swaldark .swal-title {
+  color: #fff;
+}
+
+.swaldark .swal-text {
+  color: #fff;
+}
+
+.swaldark .swal-icon--success:after,
+.swal-icon--success:before {
+  background-color: #1A202C;
+}
+
+.swaldark .swal-icon--success__hide-corners {
+  background-color: #1A202C;
+}

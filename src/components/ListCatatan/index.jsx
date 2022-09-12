@@ -10,18 +10,57 @@ import {
 } from "@chakra-ui/react";
 import { motion, AnimatePresence } from "framer-motion";
 import { showFormattedDate } from "../../utils";
+import swal from "sweetalert";
+import "./swaldark.css"
 
 const ListCatatan = ({ data, archived, filter, setData }) => {
   const deleteData = (id) => {
-    setData((prev) => prev.filter((item) => item.id !== id));
+    swal({
+      title: "Are you sure?",
+      text: "Once deleted, you will not be able to recover this data!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+      className: "swaldark",
+    }).then((willDelete) => {
+      if (willDelete) {
+        setData((prev) => prev.filter((item) => item.id !== id));
+        swal("Poof! Your data has been deleted!", {
+          icon: "success",
+          className: "swaldark",
+        });
+      } else {
+        swal("Your data is safe!", {
+          className: "swaldark",
+        });
+      }
+    });
   };
 
   const archiveData = (id) => {
-    setData((prev) =>
-      prev.map((item) =>
-        item.id === id ? { ...item, archived: !item.archived } : item
-      )
-    );
+    swal({
+      title: "Are you sure?",
+      text: "Once archived, you will not be able to recover this data!",
+      icon: "warning",
+      buttons: true,
+      dangerMode: true,
+      className: "swaldark",
+    }).then((willArchive) => {
+      if (willArchive) {
+        setData((prev) =>
+          prev.map((item) =>
+            item.id === id ? { ...item, archived: !item.archived } : item
+          )
+        );
+        swal("Poof! Your data has been archived!", {
+          icon: "success",
+        });
+      } else {
+        swal("Your data is safe!", {
+          className: "swaldark",
+        });
+      }
+    });
   };
 
   return (
